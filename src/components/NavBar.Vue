@@ -1,53 +1,31 @@
 <template>
-   <div class="center examplex">
-      <vs-navbar text-white :color="active" center-collapsed v-model="active">
-        <template #left>
-          <img src="/logos/logo-vuesax-logotipo-vuesax-png-4.png" alt="">
-        </template>
-        <template #right>
-          <vs-navbar-item :active="active == 'primary'" id="primary">
-            Primary
-          </vs-navbar-item>
-          <vs-navbar-item :active="active == 'success'" id="success">
-            Success
-          </vs-navbar-item>
-          <vs-navbar-item :active="active == 'danger'" id="danger">
-            Danger
-          </vs-navbar-item>
-          <vs-navbar-item :active="active == 'warn'" id="warn">
-            Warn
-          </vs-navbar-item>
-          <vs-navbar-item :active="active == 'dark'" id="dark">
-            Dark
-          </vs-navbar-item>
-          <vs-navbar-item :active="active == '#7d33ff'" id="#7d33ff">
-            HEX
-          </vs-navbar-item>
-          <vs-navbar-item :active="active == 'rgb(59,222,200)'" id="rgb(59,222,200)">
-            RGB
-          </vs-navbar-item>
-        </template>
-      </vs-navbar>
-      <div class="square">
-        <div class="child">
-          child 1
-        </div>
-        <div class="child">
-          child 2
-        </div>
-        <div class="child">
-          child 3
-        </div>
+  <div>
+    <vs-navbar v-model="activeItem" class="nabarx">
+      <div slot="title">
+        <vs-navbar-title>
+          Hello world
+        </vs-navbar-title>
       </div>
-    </div>
+
+      <vs-navbar-item index="0">
+        <a href="#">Home</a>
+      </vs-navbar-item>
+      <vs-navbar-item index="1">
+        <a href="#">News</a>
+      </vs-navbar-item>
+      <vs-navbar-item index="2">
+        <a href="#">Update</a>
+      </vs-navbar-item>
+    </vs-navbar>
+  </div>
 </template>
 
 <script>
 export default {
-
-}
+  data: ()=> ({
+    activeItem: 0
+  })
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

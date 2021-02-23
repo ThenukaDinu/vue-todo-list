@@ -1,22 +1,21 @@
 <template>
-  <div id="app">
-    <vs-button type="filled">Hello World Vuesax</vs-button>
+  <div>
+    <Navbar />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
+import Navbar from './components/NavBar';
+
 export default {
-  name: "App",
-  components: {}
+  name: 'App',
+  components: { Navbar },
 };
 </script>
 
 <style>
-html,
-* {
-  font-family: Roboto;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*, html, body {
+  font-family: 'Roboto'
 }
 </style>
