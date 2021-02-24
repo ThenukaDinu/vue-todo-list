@@ -1,13 +1,19 @@
 <template>
   <v-footer light padless>
     <v-card class="flex" flat tile>
-      <v-card-title class="teal">
-        <div class="a">Contáctenos | Términos de Uso | Privacidad | Cookies | Seguridad</div>
+      <v-card-title class="">
+        <div class="a">TODO APP | Vue | Vuetify | MockAPI | Axios</div>
 
         <v-spacer></v-spacer>
 
-        <v-btn v-for="icon in icons" :key="icon" class="mx-4" icon>
-          <v-icon size="24px">{{ icon }}</v-icon>
+        <v-btn
+          v-for="icon in icons"
+          :key="icon"
+          class="mx-4"
+          icon
+          v-on:click="openSocialMedia(icon.url)"
+        >
+          <v-icon size="24px">{{ icon.icon }}</v-icon>
         </v-btn>
       </v-card-title>
 
@@ -48,7 +54,16 @@ div {
 <script>
 export default {
   data: () => ({
-    icons: ["mdi-facebook", "mdi-youtube", "mdi-instagram"]
-  })
+    icons: [
+      { icon: 'mdi-facebook', url: 'https://facebook.com/thenuka98' },
+      { icon: 'mdi-github', url: 'https://github.com/ThenukaDinu' },
+      { icon: 'mdi-instagram', url: 'https://instagram.com/__thenuka98__/' },
+    ],
+  }),
+  methods: {
+    openSocialMedia(url) {
+      window.open(url, '_blank');
+    }
+  }
 };
 </script>

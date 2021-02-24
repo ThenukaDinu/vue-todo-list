@@ -10,6 +10,8 @@ export default {
   },
 
   addTodo(todo) {
+    console.log(todo)
+
     return axios.post('todos', todo).then((res) => res);
   },
 
@@ -18,6 +20,6 @@ export default {
   },
 
   updateTodo(todo) {
-    return axios.put('todos', todo);
+    return axios.put(`todos/${todo.id}`, todo);
   },
 };
