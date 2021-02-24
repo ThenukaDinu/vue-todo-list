@@ -73,6 +73,17 @@
 
             <v-list-item :key="`${i}-${task.title}`">
               <v-list-item-action>
+                <v-btn
+                  class="mx-7 "
+                  icon
+                  absolute
+                  right
+                  @click="removeTodo(task.id)"
+                  style="bottom: 5px"
+                >
+                  <v-icon size="24px" color="red"> mdi-delete </v-icon>
+                </v-btn>
+
                 <v-checkbox
                   v-model="task.completed"
                   :color="(task.completed && 'grey') || 'primary'"
