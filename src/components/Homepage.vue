@@ -1,15 +1,15 @@
 <template>
   <div>
-    <Todolist />
+    <Todolistcontainer />
   </div>
 </template>
 
 <script>
-import Todolist from './Todolist';
+import Todolistcontainer from '@/components/Todolistcontainer';
 export default {
   name: 'Home',
   components: {
-    Todolist,
+    Todolistcontainer,
   },
 };
 </script>
