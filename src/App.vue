@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <v-app id="inspire">
-      <Navbar />
+      <Nav />
       <router-view></router-view>
       <Footer />
     </v-app>
@@ -9,13 +9,13 @@
 </template>
 
 <script>
-import Navbar from "@/components/Navbar";
+import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 export default {
   name: "App",
 
   components: {
-    Navbar,
+    Nav,
     Footer
   },
 
