@@ -1,30 +1,28 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import About from '@/components/About.vue';
-import Home from '@/components/Home.vue';
-import Contact from '@/components/Contact.vue';
+import Aboutpage from '@/components/Aboutpage.vue';
+import Homepage from '@/components/Homepage.vue';
+import Contactpage from '@/components/Contactpage.vue';
 
 Vue.use(VueRouter);
 
-const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home,
-  },
-  {
-    path: '/about',
-    name: 'About',
-    component: About,
-  },
-  {
-    path: '/contact',
-    name: 'Contact',
-    component: Contact,
-  },
-];
-
 export default new VueRouter({
   mode: 'history',
-  routes,
+  routes: [
+    {
+      path: '/',
+      name: 'Home',
+      component: Homepage,
+    },
+    {
+      path: '/about',
+      name: 'About',
+      component: Aboutpage,
+    },
+    {
+      path: '/contact',
+      name: 'Contact',
+      component: Contactpage,
+    },
+  ],
 });
