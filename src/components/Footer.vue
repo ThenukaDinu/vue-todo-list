@@ -7,8 +7,8 @@
         <v-spacer></v-spacer>
 
         <v-btn
-          v-for="icon in icons"
-          :key="icon"
+          v-for="(icon,index) in icons"
+          :key="index"
           class="mx-4"
           icon
           v-on:click="openSocialMedia(icon.url)"

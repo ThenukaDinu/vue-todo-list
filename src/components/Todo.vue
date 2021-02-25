@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-list-item :key="`${i}-${task.title}`">
+    <v-list-item>
       <v-list-item-action>
         <v-btn
           class="mx-7"

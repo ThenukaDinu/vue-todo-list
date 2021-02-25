@@ -5,7 +5,7 @@
   <v-container v-else style="max-width: 700px">
     <Alert v-bind:alertType="alertType" v-bind:alertMsg="alertMsg" v-bind:alert="alert" />
     <v-container style="max-width: 500px">
-      <SearchTodo v-bind:newTask="newTask" @create="createTodo" />
+      <SearchTodo @create="createTodo" />
       <h2 class="display-1 success--text pl-4">
         Tasks:&nbsp;
         <v-fade-transition leave-absolute>
@@ -22,7 +22,7 @@
       </v-row>
       <v-divider class="mb-4"></v-divider>
       <v-card v-if="tasks.length > 0">
-        <v-slide-y-transition class="py-0" group tag="v-list">
+        <v-slide-y-transition class="py-0" group>
           <template v-for="(task, i) in tasks">
             <v-divider v-if="i !== 0" :key="`${i}-divider`"></v-divider>
             <Todo :key="i" v-bind:task="task" @remove="removeTodo" @update="updateTodo" />
@@ -48,11 +48,10 @@ export default {
   },
   data: () => ({
     tasks: [],
-    newTask: null,
     loading: true,
     alert: false,
-    alertMsg: "",
-    alertType: ""
+    alertMsg: null,
+    alertType: null
   }),
   computed: {
     completedTasks() {
@@ -80,8 +79,6 @@ export default {
           this.showAlert("error", "Sorry something wrong, please try again");
           console.log(err);
         });
-
-      this.newTask = null;
     },
     fetchTodos() {
       TodoAPI.fetchTodos()

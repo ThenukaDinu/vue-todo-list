@@ -16,10 +16,17 @@
 <script>
 export default {
   name: "SearchTodo",
-  props: ["newTask"],
+  data() {
+    return {
+      newTask: null
+    };
+  },
   methods: {
     sendSrchVal(val) {
-      (this.newTask.trim() !== '' && this.newTask !== null) && this.$emit("create", val);
+      this.newTask.trim() !== "" &&
+        this.newTask !== null &&
+        this.$emit("create", val);
+        this.newTask = null;
     }
   }
 };

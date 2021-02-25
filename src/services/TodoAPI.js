@@ -10,8 +10,6 @@ export default {
   },
 
   addTodo(todo) {
-    console.log(todo)
-
     return axios.post('todos', todo).then((res) => res);
   },
 
