@@ -1,4 +1,4 @@
-### See [Live Demo](https://6036a06e18256b00081f9250--wizardly-pike-42c645.netlify.app/)
+### See [Live Demo](https://todosongo.netlify.app/)
 
 # vue-todo-list
 
